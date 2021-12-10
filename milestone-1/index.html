@@ -52,7 +52,8 @@
                                     <p>Ricevi notifiche di nuovi messaggi</p>
                                     <a class="text-sm" href="#">Attiva nottifiche desktop</a>
                                 </div>
-                            </div>                                    
+                            </div>
+                        </div>                                        
                     </section>
 
                     <!-- Section Search-->
@@ -62,7 +63,7 @@
                     </section>
 
                     <!-- Section User List -->
-                    <section class="user-list">
+                    <section v-for="contact in contacts" class="user-list">
                         <ul>
                             <li>
                                 <!-- Single User -->
@@ -70,58 +71,10 @@
                                     <div class="container">
                                         <div class="info">
                                             <div class="image" >
-                                                <img src="img/avatar_1.jpg" alt="avatar-io">
+                                                <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name">
                                             </div>
                                             <div class="text">
-                                                <p>Michele</p>
-                                            </div>   
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <!-- Single User -->
-                                <div class="single-user">
-                                    <div class="container">
-                                        <div class="info">
-                                            <div class="image" >
-                                                <img src="img/avatar_2.jpg" alt="avatar-io">
-                                            </div>
-                                            <div class="text">
-                                                <p>Fabio</p>
-                                            </div>   
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <!-- Single User -->
-                                <div class="single-user">
-                                    <div class="container">
-                                        <div class="info">
-                                            <div class="image" >
-                                                <img src="img/avatar_3.jpg" alt="avatar-io">
-                                            </div>
-                                            <div class="text">
-                                                <p>Samuele</p>
-                                            </div>   
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <!-- Single User -->
-                                <div class="single-user">
-                                    <div class="container">
-                                        <div class="info">
-                                            <div class="image" >
-                                                <img src="img/avatar_4.jpg" alt="avatar-io">
-                                            </div>
-                                            <div class="text">
-                                                <p>Luisa</p>
+                                                <p>{{contact.name}}</p>
                                             </div>   
                                         </div>
                                     </div>
