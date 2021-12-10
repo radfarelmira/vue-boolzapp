@@ -82,7 +82,7 @@ nav{
 }
 
 .icons i{
-    margin-left: 5px;
+    margin-left: 10px;
     color: #b1b1b1;
 }
 
@@ -118,6 +118,25 @@ nav .notify a{
     font-size: small;
 }
 
+/* Section Search */
+nav .search{
+    padding: 5px;
+    display: flex;
+}
+
+nav .search button{
+    width: 20%;
+    border: none;
+    background-color: white;
+    color: #b1b1b1;
+    cursor: pointer;
+}
+
+nav .search input{
+    flex: 1;
+    padding: 5px 5px ;
+    border: none;
+}
 
 /*Section content */
 .content{
