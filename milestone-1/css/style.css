@@ -133,6 +133,7 @@ nav .search input{
     padding: 5px 5px ;
     border: none;
 }
+
  /* Section User List */
  nav .user-list{
     overflow-y: auto;
@@ -145,7 +146,6 @@ nav .user-list .single-user{
 nav .user-list .single-user:hover{
     background-color: #e9ebeb;
 }
-
 
 
 /*Section contact */
@@ -165,9 +165,44 @@ nav .user-list .single-user:hover{
 .user-contact .chat-area{
     width: 100%;
     height:calc(100% - 120px);
-    
     overflow-y: auto;
     background-image:url(../img/mine.jpg) ;
+}
+
+.chat-area ul{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-area li{
+    max-width: 300px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.chat-area .received-sms{
+    background-color: white;  
+}
+
+.chat-area .sent-sms{
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+
+.chat-area .sms-text{
+    margin-bottom: 15px;
+}
+
+.chat-area .date{
+    padding: 5px;
+    font-size: 12px;
+    color: #797878;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 /* Section message */
@@ -196,3 +231,4 @@ nav .user-list .single-user:hover{
 .message-content i{
     color: #797878;
 }
+
