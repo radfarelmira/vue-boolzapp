@@ -49,7 +49,6 @@ main{
     height: 100%;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
 }
 
 /*Nav */
@@ -149,10 +148,7 @@ nav .user-list .single-user:hover{
 
 
 
-
-
-
-/*Section content */
+/*Section contact */
 .user-contact{
     width: 60%;
     height: 100%;
@@ -168,6 +164,35 @@ nav .user-list .single-user:hover{
 /*Section Chat Area */
 .user-contact .chat-area{
     width: 100%;
-    height: 100%;
+    height:calc(100% - 120px);
+    
+    overflow-y: auto;
     background-image:url(../img/mine.jpg) ;
+}
+
+/* Section message */
+.user-contact .message{
+    width: 100%;
+    height: 50px;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.message-content input{
+    width: 80%;
+    padding: 10px;
+    border: none;
+}
+
+.message-content i{
+    color: #797878;
 }
