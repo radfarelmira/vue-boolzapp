@@ -60,6 +60,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
 }
 
 .info{
@@ -67,14 +68,15 @@ nav{
     align-items: center;
 }
 
-.info p{
-    margin-left: 5px;
+.text{
+    margin-left: 10px;
     font-size: 14px;
     font-weight: bold;
 }
 
 .image{
     width: 50px;
+    height: 50px;
     border-radius: 50px;
     overflow: hidden;
 }
@@ -84,14 +86,38 @@ nav{
     color: #b1b1b1;
 }
 
+/*Section Active User  */
 nav .active-user{
-    padding: 10px;
     background: #eaeaea;
 }
+
 nav .user-list{
     overflow-y: auto;
     height: 30%;
 }
+
+ /* Section Notify */
+nav .notify{
+    background-color: #8edafb;
+}
+
+nav .notify .image{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .notify i{
+    color: #8edafb;
+    font-size: 20px;
+}
+
+nav .notify a{
+    color: #b1b1b1;
+    font-size: small;
+}
+
 
 /*Section content */
 .content{
