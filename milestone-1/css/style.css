@@ -28,20 +28,21 @@ img{
 }
 
 /* Container */
-.app-container{
+.app-wrapper{
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #009588;
+    min-width: 950px;
+    background-color: #009688;
+    background-color: linear-gradient(#009688 0px, #009688 15vh, #dddbd1 15vh, #d2dbdc 100%);;
 }
 
 /* App-wrapper */
-.app-wrapper{
+.app-container{
     width: 80%;
-    min-width: 950px;
-    height: 90vh;
+    height: 95%;
 }
 
 /* MAIN */
@@ -59,8 +60,10 @@ nav{
     flex-direction: column;
     background-color: white;
     border-right: 2px solid #e0dfdf;
+    overflow:hidden;
 }
 
+/* COMMON */
 .container{
     display: flex;
     justify-content: space-between;
@@ -134,8 +137,9 @@ nav .search input{
     border: none;
 }
 
- /* Section User List */
- nav .user-list{
+/* Section User List */
+nav .user-list{
+    flex-grow: 1;
     overflow-y: auto;
 }
 
@@ -152,8 +156,9 @@ nav .user-list .single-user:hover{
 .user-contact{
     width: 60%;
     height: 100%;
-    /* test */
-    background-color: plum;
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Section User Access */
@@ -164,7 +169,7 @@ nav .user-list .single-user:hover{
 /*Section Chat Area */
 .user-contact .chat-area{
     width: 100%;
-    height:calc(100% - 120px);
+    flex-grow: 1;
     overflow-y: auto;
     background-image:url(../img/mine.jpg) ;
 }
@@ -176,18 +181,19 @@ nav .user-list .single-user:hover{
 }
 
 .chat-area li{
-    max-width: 300px;
+    max-width: 48%;
+    min-width: 25%;
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
     position: relative;
 }
 
-.chat-area .received-sms{
+.chat-area .sms.received{
     background-color: white;  
 }
 
-.chat-area .sent-sms{
+.chat-area .sms.sent{
     background-color: #d5f9ba;
     align-self: flex-end;
 }
