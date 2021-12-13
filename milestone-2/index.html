@@ -65,7 +65,7 @@
                     <!-- Section User List -->
                     <section  class="user-list">
                         <!-- Single User -->
-                        <div v-for="contact in contacts" class="single-user">
+                        <div v-for="(contact, index) in contacts" @click="changeContact(index)" class="single-user">
                             <div class="container">
                                 <div class="info">
                                     <div class="image" >
@@ -89,10 +89,10 @@
                         <div class="container">
                             <div class="info">
                                 <div class="image" >
-                                    <img src="img/avatar_3.jpg" alt="avatar-io">
+                                    <img :src="'img/avatar' + contacts[activeContact].avatar +'.jpg'" :alt="contacts[activeContact].avatar">
                                 </div>
                                 <div class="text">
-                                    <p>Samuele</p>
+                                    <p>{{contacts[activeContact].name}}</p>
                                     <p class="text-sm">Ultimo accesso oggi alle</p>
                                 </div>   
                             </div>
@@ -107,34 +107,12 @@
 
                     <!-- Section Chat Area -->
                     <section class="chat-area">
-                        <ul>
-                            <!-- Single sms -->
-                            <li class="sms received">
-                                <div class="sms-text">
-                                    La Marianna va in campagna
-                                </div>
-                                
-                                <span class="date">28/03/2020 10.20.10</span>
-                            </li>
+                        <!-- Single sms -->
+                        <div v-for="message in contacts[activeContact].messages" class="sms" :Class="message.status">
+                            {{message.text}}
+                            <div class="date">{{message.date}}</div>
+                        </div>
 
-                            <!-- Single sms -->
-                            <li class="sms sent">
-                                <div class="sms-text">
-                                    Sicuro di non aver sbagliato chat?
-                                </div>
-                                
-                                <span class="date">28/03/2020 10.20.10</span>
-                            </li>
-
-                            <!-- Single sms -->
-                            <li class="sms received">
-                                <div class="sms-text">
-                                    Ah scusa!
-                                </div>
-                                
-                                <span class="date">28/03/2020 10.20.10</span>
-                            </li>
-                        </ul>
                     </section>
 
                     <!-- Section Message -->

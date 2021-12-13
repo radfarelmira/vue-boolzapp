@@ -166,48 +166,41 @@ nav .user-list .single-user:hover{
 }
 
 /*Section Chat Area */
-.user-contact .chat-area{
+.chat-area{
     width: 100%;
     flex-grow: 1;
     overflow-y: auto;
     background-image:url(../img/mine.jpg) ;
 }
 
-.chat-area ul{
-    margin: 40px;
-    display: flex;
-    flex-direction: column;
-}
-
-.chat-area li{
-    max-width: 48%;
-    min-width: 25%;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
+.chat-area .sms{
+    max-width: 65%;
+    min-width: 30%;
+    padding: 10px 10px 20px 10px;
     position: relative;
+    margin: 10px 20px;
+    border-radius: 5px;
 }
 
 .chat-area .sms.received{
-    background-color: white;  
+    background-color: white;
+    float: left;  
+    clear: both;
 }
 
 .chat-area .sms.sent{
     background-color: #d5f9ba;
-    align-self: flex-end;
+    float: right;
+    clear: both;
 }
 
-.chat-area .sms-text{
-    margin-bottom: 15px;
-}
 
 .chat-area .date{
-    padding: 5px;
     font-size: 12px;
     color: #797878;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 5px;
+    right: 5px;
 }
 
 /* Section message */

@@ -4,7 +4,6 @@
 // Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, 
 // visualizzare nome e immagine di ogni contatto
 
-
 Vue.config.devtools = true;
 
 const app = new Vue(
