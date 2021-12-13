@@ -59,7 +59,13 @@
                     <!-- Section Search-->
                     <section class="search">
                         <button><i class="fas fa-search"></i></button>
-                        <input type="text" class="input-field" placeholder="Cerca o inizia una nuova chat">
+                        <input 
+                        type="text" 
+                        class="input-field" 
+                        placeholder="Cerca o inizia una nuova chat"
+                        @keyup.enter="filterContact"
+                        v-model="searchContact"
+                        >
                     </section>
 
                     <!-- Section User List -->
@@ -123,7 +129,7 @@
                             type="text" 
                             placeholder="Scrivi un messaggio" 
                             v-model="newMessageText" 
-                            @keyup.enter="sendNewMessage(activeContact)"
+                            @keyup.enter="sendNewMessage"
                             >
                             <i class="fas fa-microphone"></i>
                         </div>

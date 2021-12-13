@@ -30,6 +30,7 @@ const app = new Vue(
         data: {
             activeContact: 0,
             newMessageText:'',
+            searchContact: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -121,8 +122,8 @@ const app = new Vue(
            changeContact: function (index) {
                this.activeContact = index;
            },
-           sendNewMessage: function (index) {
-               this.contacts[index].messages.push({
+           sendNewMessage: function () {
+               this.contacts[this.activeContact].messages.push({
                    text: this.newMessageText,
                    date: '10/01/2020 15:50:00',
                    status: 'sent'
@@ -131,11 +132,17 @@ const app = new Vue(
 
                setTimeout(this.receiveNewMessage ,1000);
             },
-            receiveNewMessage: function (index) {
-                this.contacts[index].messages.push({
+            receiveNewMessage: function () {
+                this.contacts[this.activeContact].messages.push({
                     text: 'ok',
                     date: '10/01/2020 15:50:00',
                     status: 'received'
+                });
+            },
+            filterContact: function () {
+                const trimSearchContact = this.searchContact.trim();
+                this.todos.forEach(element => {
+                    
                 });
             }
         }
