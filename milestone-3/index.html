@@ -65,7 +65,11 @@
                     <!-- Section User List -->
                     <section  class="user-list">
                         <!-- Single User -->
-                        <div v-for="(contact, index) in contacts" @click="changeContact(index)" class="single-user">
+                        <div 
+                        v-for="(contact, index) in contacts" 
+                        @click="changeContact(index)" 
+                        class="single-user" 
+                        >
                             <div class="container">
                                 <div class="info">
                                     <div class="image" >
@@ -119,7 +123,12 @@
                     <section class="message">
                         <div class="message-content">
                             <i class="far fa-smile"></i>
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input 
+                            type="text" 
+                            placeholder="Scrivi un messaggio" 
+                            v-model="newMessageText" 
+                            @keyup.enter="sendNewMessage"
+                            >
                             <i class="fas fa-microphone"></i>
                         </div>
                         

@@ -9,6 +9,12 @@
 // al contatto attivo all’interno del pannello della conversazione
 // Click sul contatto mostra la conversazione del contatto cliccato
 
+// Milestone 3
+// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene 
+// aggiunto al thread sopra, come messaggio verde
+// Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, 
+// che apparirà dopo 1 secondo.
+
 
 Vue.config.devtools = true;
 
@@ -17,6 +23,7 @@ const app = new Vue(
         el: '#root',
         data: {
             activeContact: 0,
+            newMessageText:'',
             contacts: [
                 {
                     name: 'Michele',
@@ -108,6 +115,23 @@ const app = new Vue(
            changeContact: function (index) {
                this.activeContact = index;
            },
+           sendNewMessage: function () {
+               this.contacts[this.activeContact].messages.push({
+                   text: this.newMessageText,
+                   date: '10/01/2020 15:50:00',
+                   status: 'sent'
+               });
+               this.newMessageText='';
+
+               setTimeout(this.receiveNewMessage ,1000);
+            },
+            receiveNewMessage: function () {
+                this.contacts[this.activeContact].messages.push({
+                    text: 'ok',
+                    date: '10/01/2020 15:50:00',
+                    status: 'received'
+                });
+            },
         }
     }
 );
