@@ -125,7 +125,7 @@ const app = new Vue(
            sendNewMessage: function () {
                this.contacts[this.activeContact].messages.push({
                    text: this.newMessageText,
-                   date: '10/01/2020 15:50:00',
+                   date: this.getCurrentDate(),
                    status: 'sent'
                });
                this.newMessageText='';
@@ -135,7 +135,7 @@ const app = new Vue(
             receiveNewMessage: function () {
                 this.contacts[this.activeContact].messages.push({
                     text: 'ok',
-                    date: '10/01/2020 15:50:00',
+                    date: this.getCurrentDate(),
                     status: 'received'
                 });
             },
@@ -147,6 +147,9 @@ const app = new Vue(
                       contact.visible= false;
                   }
                 })
+            },
+            getCurrentDate () {
+                return dayjs().format("DD/MM/YYYY HH:mm")
             }
         }
     }
