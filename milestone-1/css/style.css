@@ -35,7 +35,6 @@ img{
     justify-content: center;
     align-items: center;
     min-width: 950px;
-    background-color: #009688;
     background-color: linear-gradient(#009688 0px, #009688 15vh, #dddbd1 15vh, #d2dbdc 100%);;
 }
 
