@@ -29,6 +29,7 @@ const app = new Vue(
         el: '#root',
         data: {
             activeContact: 0,
+            newMessageText:'',
             contacts: [
                 {
                     name: 'Michele',
@@ -120,6 +121,23 @@ const app = new Vue(
            changeContact: function (index) {
                this.activeContact = index;
            },
+           sendNewMessage: function (index) {
+               this.contacts[index].messages.push({
+                   text: this.newMessageText,
+                   date: '10/01/2020 15:50:00',
+                   status: 'sent'
+               });
+               this.newMessageText='';
+
+               setTimeout(this.receiveNewMessage ,1000);
+            },
+            receiveNewMessage: function (index) {
+                this.contacts[index].messages.push({
+                    text: 'ok',
+                    date: '10/01/2020 15:50:00',
+                    status: 'received'
+                });
+            }
         }
     }
 );

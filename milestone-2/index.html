@@ -108,7 +108,7 @@
                     <!-- Section Chat Area -->
                     <section class="chat-area">
                         <!-- Single sms -->
-                        <div v-for="message in contacts[activeContact].messages" class="sms" :Class="message.status">
+                        <div v-for="(message) in contacts[activeContact].messages" class="sms" :Class="message.status">
                             {{message.text}}
                             <div class="date">{{message.date}}</div>
                         </div>
@@ -119,7 +119,12 @@
                     <section class="message">
                         <div class="message-content">
                             <i class="far fa-smile"></i>
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input 
+                            type="text" 
+                            placeholder="Scrivi un messaggio" 
+                            v-model="newMessageText" 
+                            @keyup.enter="sendNewMessage(activeContact)"
+                            >
                             <i class="fas fa-microphone"></i>
                         </div>
                         
