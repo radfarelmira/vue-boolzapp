@@ -71,7 +71,12 @@
                     <!-- Section User List -->
                     <section  class="user-list">
                         <!-- Single User -->
-                        <div v-for="(contact, index) in contacts" @click="changeContact(index)" class="single-user" v-show="contact.visible">
+                        <div 
+                        v-for="(contact, index) in contacts" 
+                        @click="changeContact(index)" 
+                        class="single-user" 
+                        v-show="contact.visible"
+                        >
                             <div class="container">
                                 <div class="info">
                                     <div class="image" >
