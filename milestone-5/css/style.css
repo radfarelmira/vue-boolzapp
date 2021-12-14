@@ -184,7 +184,7 @@ nav .user-list .single-user.active{
 .chat-area .sms{
     max-width: 65%;
     min-width: 30%;
-    padding: 10px 10px 20px 10px;
+    padding: 20px 10px;
     position: relative;
     margin: 10px 20px;
     border-radius: 5px;
@@ -211,6 +211,38 @@ nav .user-list .single-user.active{
     right: 5px;
 }
 
+.sms .arrow-down{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+ 
+
+.sms .sublist{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1;
+    display: none;
+}
+
+.sublist .info-sms,
+.sublist .delete-sms{
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.info-sms:active,
+.delete-sms:active{
+    transform: scale(0.9);
+}
+
+.sms .sublist.active{
+    display: block;
+}
 /* Section message */
 .user-contact .message{
     width: 100%;

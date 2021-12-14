@@ -122,9 +122,19 @@
                     <!-- Section Chat Area -->
                     <section class="chat-area">
                         <!-- Single sms -->
-                        <div v-for="(message) in contacts[activeContact].messages" class="sms" :Class="message.status">
+                        <div v-for="(message, index) in contacts[activeContact].messages" class="sms" :Class="message.status">
                             {{message.text}}
                             <div class="date">{{message.date}}</div>
+
+                            <span @click="showSubList(message, index)" class="arrow-down text-sm">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+
+                            <!-- Sublist Message -->
+                            <div class="sublist" :class="{'active': message.isActive}">
+                                <div class="info-sms">Message info</div>
+                                <div class="delete-sms">Delete message</div>
+                            </div>
                         </div>
 
                     </section>
