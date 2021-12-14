@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="text">
                                     <p>{{contact.name}}</p>
-                                    <p v-if="contact.messages.length > 0"  user-list pclass="text-sm">{{contact.messages.slice(-1)[0].text}}</p>
+                                    <p v-if="contact.messages.length > 0" class="text-sm">{{contact.messages.slice(-1)[0].text}}</p>
 
                                     <span v-if="contact.messages.length > 0" class="text-sm" >{{contact.messages.slice(-1)[0].date}}</span>
                                 </div>   

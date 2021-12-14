@@ -179,9 +179,7 @@ const app = new Vue(
                 element.isActive = !element.isActive;
             },
             deleteMessage: function (index) {
-                console.log(index)
-                this.contacts[this.activeContact].messages.splice(index, 1);
-                
+                this.contacts[this.activeContact].messages.splice(index, 1);  
             }
         }
     }
