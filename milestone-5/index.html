@@ -84,9 +84,9 @@
                                 </div>
                                 <div class="text">
                                     <p>{{contact.name}}</p>
-                                    <p class="text-sm">{{contact.messages.slice(-1)[0].text}}</p>
+                                    <p v-if="contact.messages.length > 0"  user-list pclass="text-sm">{{contact.messages.slice(-1)[0].text}}</p>
 
-                                    <span class="text-sm" >{{contact.messages.slice(-1)[0].date}}</span>
+                                    <span v-if="contact.messages.length > 0" class="text-sm" >{{contact.messages.slice(-1)[0].date}}</span>
                                 </div>   
                             </div>
                             
@@ -122,7 +122,7 @@
                     <!-- Section Chat Area -->
                     <section class="chat-area">
                         <!-- Single sms -->
-                        <div v-for="(message, index) in contacts[activeContact].messages" class="sms" :Class="message.status">
+                        <div v-for="(message, index) in contacts[activeContact].messages" class="sms" :class="message.status">
                             {{message.text}}
                             <div class="date">{{message.date}}</div>
 
