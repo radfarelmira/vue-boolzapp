@@ -179,6 +179,10 @@ const app = new Vue(
             showSubList: function (element, index){
                 this.activeMessage = index;
                 element.isActive = !element.isActive;
+            },
+            deleteMessage: function (index) {
+                this.contacts[this.activeContact].messages.splice(index, 1);
+                console.log(index)
             }
         }
     }

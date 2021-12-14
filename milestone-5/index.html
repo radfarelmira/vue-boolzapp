@@ -133,7 +133,7 @@
                             <!-- Sublist Message -->
                             <div class="sublist" :class="{'active': message.isActive}">
                                 <div class="info-sms">Message info</div>
-                                <div class="delete-sms">Delete message</div>
+                                <div @click="deleteMessage(index)"class="delete-sms">Delete message</div>
                             </div>
                         </div>
 
