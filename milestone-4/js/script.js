@@ -123,21 +123,26 @@ const app = new Vue(
                this.activeContact = index;
            },
            sendNewMessage: function () {
-               this.contacts[this.activeContact].messages.push({
-                   text: this.newMessageText,
-                   date: this.getCurrentDate(),
-                   status: 'sent'
-               });
-               this.newMessageText='';
+                if (this.newMessageText.trim().length > 0) {
+                    const newMessage = {
+                        text: this.newMessageText,
+                        date: this.getCurrentDate (),
+                        status: 'sent'
+                    }
 
-               setTimeout(this.receiveNewMessage ,1000);
-            },
-            receiveNewMessage: function () {
-                this.contacts[this.activeContact].messages.push({
-                    text: 'ok',
-                    date: this.getCurrentDate(),
-                    status: 'received'
-                });
+                    this.contacts[this.activeContact].messages.push(newMessage);
+                    this.newMessageText='';
+
+                    setTimeout(() => {
+                        const receivedMessage = {
+                            text: 'ok',
+                            date: this.getCurrentDate (),
+                            status: 'received'
+                        }
+        
+                        this.contacts[this.activeContact].messages.push(receivedMessage);
+                    } ,1000);
+                };
             },
             filterContact: function () {
                 this.contacts.forEach((contact) => {

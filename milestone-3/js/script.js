@@ -122,19 +122,23 @@ const app = new Vue(
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     status: 'sent'
                    }
+
+                   this.contacts[this.activeContact].messages.push(newMessage);
+                   this.newMessageText='';
+
+                   setTimeout(this.receiveNewMessage ,1000);
                };
 
-               this.contacts[this.activeContact].messages.push(newMessage);
-               this.newMessageText='';
-
-               setTimeout(this.receiveNewMessage ,1000);
+               
             },
             receiveNewMessage: function () {
-                this.contacts[this.activeContact].messages.push({
+                const receivedMessage = {
                     text: 'ok',
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     status: 'received'
-                });
+                }
+
+                this.contacts[this.activeContact].messages.push(receivedMessage);
             },
         }
     }
