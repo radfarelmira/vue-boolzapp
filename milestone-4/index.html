@@ -76,6 +76,7 @@
                         @click="changeContact(index)" 
                         class="single-user" 
                         v-show="contact.visible"
+                        :class="{'active': index === activeContact}"
                         >
                             <div class="container">
                                 <div class="info">

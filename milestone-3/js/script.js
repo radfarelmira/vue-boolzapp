@@ -116,11 +116,15 @@ const app = new Vue(
                this.activeContact = index;
            },
            sendNewMessage: function () {
-               this.contacts[this.activeContact].messages.push({
-                   text: this.newMessageText,
-                   date: '10/01/2020 15:50:00',
-                   status: 'sent'
-               });
+               if (this.newMessageText.trim().length > 0) {
+                    const newMessage = {
+                    text: this.newMessageText,
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    status: 'sent'
+                   }
+               };
+
+               this.contacts[this.activeContact].messages.push(newMessage);
                this.newMessageText='';
 
                setTimeout(this.receiveNewMessage ,1000);
@@ -128,7 +132,7 @@ const app = new Vue(
             receiveNewMessage: function () {
                 this.contacts[this.activeContact].messages.push({
                     text: 'ok',
-                    date: '10/01/2020 15:50:00',
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     status: 'received'
                 });
             },

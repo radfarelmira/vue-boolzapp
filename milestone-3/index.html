@@ -68,7 +68,8 @@
                         <div 
                         v-for="(contact, index) in contacts" 
                         @click="changeContact(index)" 
-                        class="single-user" 
+                        class="single-user"
+                        :class="{'active': index === activeContact}"
                         >
                             <div class="container">
                                 <div class="info">
@@ -143,6 +144,7 @@
         
     </div>
 
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
