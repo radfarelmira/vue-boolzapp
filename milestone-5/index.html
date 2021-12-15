@@ -84,9 +84,9 @@
                                 </div>
                                 <div class="text">
                                     <p>{{contact.name}}</p>
-                                    <p v-if="contact.messages.length > 0" class="text-sm">{{contact.messages.slice(-1)[0].text}}</p>
+                                    <p class="text-sm">{{getContactLastMessageText(contact)}}</p>
 
-                                    <span v-if="contact.messages.length > 0" class="text-sm" >{{contact.messages.slice(-1)[0].date}}</span>
+                                    <span class="text-sm" >{{getContactLastMessageDate(contact)}}</span>
                                 </div>   
                             </div>
                             
@@ -126,12 +126,12 @@
                             {{message.text}}
                             <div class="date">{{message.date}}</div>
 
-                            <span @click="showSubList(message, index)" class="arrow-down text-sm">
+                            <span @click="showSubList(index)" class="arrow-down text-sm">
                                 <i class="fas fa-chevron-down"></i>
                             </span>
 
                             <!-- Sublist Message -->
-                            <div v-for=" index === activeMessage" class="sublist" :class="{'active': message.isActive}">
+                            <div v-if="index === activeMessage" class="sublist">
                                 <div class="info-sms">Message info</div>
                                 <div @click="deleteMessage(index)"class="delete-sms">Delete message</div>
                             </div>

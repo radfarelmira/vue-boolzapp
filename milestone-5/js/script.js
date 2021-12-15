@@ -35,7 +35,7 @@ const app = new Vue(
             activeContact: 0,
             newMessageText:'',
             searchContact: '',
-            activeMessage: 0,
+            activeMessage: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -137,6 +137,7 @@ const app = new Vue(
         methods: {
            changeContact: function (index) {
                this.activeContact = index;
+            //    this.activeMessage = null;
             },
            sendNewMessage: function () {
                 if (this.newMessageText.trim().length > 0) {
@@ -174,12 +175,32 @@ const app = new Vue(
             getCurrentDate () {
                 return dayjs().format("DD/MM/YYYY HH:mm:ss")
             },
-            showSubList: function (element, index){
-                this.activeMessage = index;
-                element.isActive = !element.isActive;
+            showSubList: function (index){
+                if (index === this.activeMessage){
+                    this.activeMessage = null;
+                }else {
+                    this.activeMessage = index;
+                }
             },
             deleteMessage: function (index) {
-                this.contacts[this.activeContact].messages.splice(index, 1);  
+                this.contacts[this.activeContact].messages.splice(index, 1);
+                this.activeMessage = null;
+            },
+            getContactLastMessageDate: function(contact){
+                const contactMessages = contact.messages;
+                return contactMessages[contactMessages.length-1].date;
+            },
+            getContactLastMessageText: function(contact) {
+                const contactMessages = contact.messages;
+                const lastMessageText = contactMessages[contactMessages.length-1].text;
+
+                let cutMessageText = lastMessageText.slice(0, 20);
+
+                if (cutMessageText.length > 19) {
+                    cutMessageText += '...';
+                }
+
+                return cutMessageText;
             }
         }
     }

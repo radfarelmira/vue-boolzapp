@@ -230,7 +230,6 @@ nav .user-list .single-user.active{
     padding: 15px;
     border-radius: 5px;
     z-index: 1;
-    display: none;
 }
 
 .sublist .info-sms,
@@ -244,9 +243,6 @@ nav .user-list .single-user.active{
     transform: scale(0.9);
 }
 
-.sms .sublist.active{
-    display: block;
-}
 /* Section message */
 .user-contact .message{
     width: 100%;
