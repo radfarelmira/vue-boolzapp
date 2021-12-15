@@ -215,8 +215,12 @@ nav .user-list .single-user.active{
     position: absolute;
     top: 5px;
     right: 5px;
+    display: none;
 }
- 
+
+.sms:hover .arrow-down{
+    display: block;
+}
 
 .sms .sublist{
     position: absolute;

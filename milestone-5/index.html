@@ -131,7 +131,7 @@
                             </span>
 
                             <!-- Sublist Message -->
-                            <div class="sublist" :class="{'active': message.isActive}">
+                            <div v-for=" index === activeMessage" class="sublist" -down>
                                 <div class="info-sms">Message info</div>
                                 <div @click="deleteMessage(index)"class="delete-sms">Delete message</div>
                             </div>
