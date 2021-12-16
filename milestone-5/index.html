@@ -84,9 +84,9 @@
                                 </div>
                                 <div class="text">
                                     <p>{{contact.name}}</p>
-                                    <p class="text-sm">{{getContactLastMessageText(contact)}}</p>
+                                    <p v-if="contact.messages.length > 0" class="text-sm">{{getContactLastMessageText(contact)}}</p>
 
-                                    <span class="text-sm" >{{getContactLastMessageDate(contact)}}</span>
+                                    <span v-if="contact.messages.length > 0" class="text-sm" >{{getContactLastMessageDate(contact)}}</span>
                                 </div>   
                             </div>
                             
