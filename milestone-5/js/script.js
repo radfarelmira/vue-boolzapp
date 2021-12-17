@@ -137,7 +137,7 @@ const app = new Vue(
         methods: {
            changeContact: function (index) {
                this.activeContact = index;
-            //    this.activeMessage = null;
+               this.activeMessage = null;
             },
            sendNewMessage: function () {
                 if (this.newMessageText.trim().length > 0) {
